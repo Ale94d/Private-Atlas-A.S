@@ -9,8 +9,10 @@
     <meta name="description" content="Private Atlas A.S es tu espacio personal para organizar tu vida, escribir pensamientos, planear y explorar.">
     <meta name="keywords" content="Private Atlas, planner, journal, atlas, organización personal">
 
+    <meta name="google-site-verification" content="m8qYo2uHarSAbQ7Ip1gkl1eG2mRNzVvvv2QTFVL_wXE" />
+
     <meta property="og:title" content="Private Atlas A.S">
-    <meta property="og:description" content="Tu espacio personal para organizar tu vida y pensamientos.">
+    <meta property="og:description" content="Tu espacio personal para organizar y explorar tu vida.">
     <meta property="og:image" content="https://ale94d.github.io/Private-Atlas-A.S/preview.jpg">
 
     <link rel="icon" href="favicon-sol.png" type="image/png">
@@ -46,8 +48,7 @@
     <div class="container">
         <h1>Private Atlas A.S</h1>
         <p class="subtitle">Tu espacio personal digital</p>
-        <p>Organiza tu vida, escribe tus ideas y mantén tu mundo en orden.</p>
-        <button class="btn-primary" onclick="scrollToSection('planner')">Empezar</button>
+        <p>Organiza tu vida, escribe tus ideas y guarda tus recuerdos en un solo lugar.</p>
     </div>
 </section>
 
@@ -55,15 +56,8 @@
 <section id="planner" class="section">
     <div class="container">
         <h2>📅 Planner</h2>
-        <div class="card-grid">
-            <div class="card-box">
-                <h3>Tareas</h3>
-                <p>Organiza tus actividades diarias.</p>
-            </div>
-            <div class="card-box">
-                <h3>Metas</h3>
-                <p>Define tus objetivos.</p>
-            </div>
+        <div class="card-box">
+            <p>Espacio para tareas futuras (se puede ampliar luego).</p>
         </div>
     </div>
 </section>
@@ -72,9 +66,11 @@
 <section id="journal" class="section">
     <div class="container">
         <h2>📖 Journal</h2>
-        <div class="card-box">
-            <textarea placeholder="Escribe aquí tus pensamientos..."></textarea>
-        </div>
+
+        <textarea id="journalInput" placeholder="Escribe aquí tus pensamientos..."></textarea>
+        <button onclick="saveJournal()" class="btn-primary">Guardar</button>
+
+        <div id="journalList"></div>
     </div>
 </section>
 
@@ -82,15 +78,8 @@
 <section id="atlas" class="section">
     <div class="container">
         <h2>🧭 Atlas</h2>
-        <div class="card-grid">
-            <div class="card-box">
-                <h3>Lugares</h3>
-                <p>Guarda sitios importantes.</p>
-            </div>
-            <div class="card-box">
-                <h3>Rutas</h3>
-                <p>Registra tus recorridos.</p>
-            </div>
+        <div class="card-box">
+            <p>Espacio para mapas, rutas o ideas de lugares.</p>
         </div>
     </div>
 </section>
@@ -98,11 +87,10 @@
 <!-- MOOD -->
 <section id="mood" class="section">
     <div class="container">
-        <h2>🎧 Mood</h2>
-        <div class="card-box">
-            <p>Tu estado de ánimo del día.</p>
-            <button class="btn-primary">Reproducir playlist</button>
-        </div>
+        <h2>🎧 Mood (Spotify)</h2>
+
+        <input id="spotifyLink" placeholder="Pega link de playlist de Spotify">
+        <button onclick="openPlaylist()" class="btn-primary">Reproducir</button>
     </div>
 </section>
 
@@ -110,19 +98,15 @@
 <section id="library" class="section">
     <div class="container">
         <h2>📚 Library</h2>
-        <div class="card-grid">
-            <div class="card-box">
-                <h3>Libros</h3>
-                <p>Lecturas actuales.</p>
-            </div>
-            <div class="card-box">
-                <h3>Notas</h3>
-                <p>Apuntes importantes.</p>
-            </div>
-        </div>
+
+        <input id="bookInput" placeholder="Agregar libro">
+        <button onclick="addBook()" class="btn-primary">Agregar</button>
+
+        <div id="bookList"></div>
     </div>
 </section>
 
 <script src="script.js"></script>
+
 </body>
 </html>
